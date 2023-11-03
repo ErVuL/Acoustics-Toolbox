@@ -185,6 +185,7 @@ all:
 	@echo "***********************************"
 
 install:
+	mkdir bin
 	(cd misc;	make -k all)
 	(cd tslib;	make -k all)
 	(cd Bellhop;	make -k install)
@@ -198,7 +199,7 @@ install:
 	@echo "***************************************"
 
 clean:
-	-rm -f bin/*.exe
+	-rm -rf bin
 	find . -name '*.dSYM' -exec rm -r {} +
 	find . -name '*.png'  -exec rm -r {} +
 	find . -name '*.eps'  -exec rm -r {} +
